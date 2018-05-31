@@ -1,3 +1,3 @@
 output "result" {
-  value = "${chomp(base64decode(data.external.secret.result["value"]))}"
+  value = "${data.external.secret.result["value"]}"
 }
