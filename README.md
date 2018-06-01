@@ -21,11 +21,11 @@ Add the module to your Terraform resources:
 
 ```hcl
 module "rds-postgres-password" {
-  source    = "github.com/gearnode/terraform-kubernetes-get-secret?ref=0.1.0"
+  source    = "github.com/gearnode/terraform-kubernetes-get-secret?ref=0.2.0"
 
   namespace = "default"
-  key       = "terraform"
-  name      = "database-password"
+  name = "terraform"
+  key = "database-password"
 }
 ```
 
