@@ -26,6 +26,7 @@ module "rds-postgres-password" {
   namespace = "default"
   name = "terraform"
   key = "database-password"
+  context = "supercontext"
 }
 ```
 
@@ -40,6 +41,7 @@ Available variables are listed below, along with their default values:
 | `namespace` | The kubernetes namespace         |
 | `name`      | The kubernetes secret name       |
 | `key`       | The kubernetes secret key to get |
+| `context`   | The kubernetes context           |
 
 ### Module outputs
 
@@ -54,7 +56,6 @@ Available outputs are listed below, along with their description:
 ### Requirements
 
 - fully installed and configured `go` environment
-- fully installed and configured [golang/dep](https://github.com/golang/dep)
 
 ### Contributing code
 

@@ -9,3 +9,7 @@ variable "key" {
 variable "namespace" {
   type = "string"
 }
+
+variable "context" {
+  type = "string"
+}

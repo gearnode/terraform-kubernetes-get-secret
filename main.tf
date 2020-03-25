@@ -1,7 +1,3 @@
-provider "aws" {
-  version = "~> 1.10"
-}
-
 data "external" "secret" {
   program = ["${path.module}/bin/get-secret-value"]
 
@@ -9,5 +5,6 @@ data "external" "secret" {
     namespace = "${var.namespace}"
     name      = "${var.name}"
     key       = "${var.key}"
+    context   = "${var.context}"
   }
 }
