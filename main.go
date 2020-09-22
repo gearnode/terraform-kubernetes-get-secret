@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -70,7 +71,7 @@ func main() {
 		fatal("cannot create Kubernetes configuration: %v", err)
 	}
 
-	secret, err := clientset.CoreV1().Secrets(q.Namespace).Get(q.Name, metav1.GetOptions{})
+	secret, err := clientset.CoreV1().Secrets(q.Namespace).Get(context.TODO(), q.Name, metav1.GetOptions{})
 	if err != nil {
 		fatal("cannot get the %q secret in %q namespace: %v", q.Name, q.Namespace, err)
 	}
